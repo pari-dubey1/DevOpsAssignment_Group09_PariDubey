@@ -167,7 +167,27 @@ To Do → In Progress → Testing → Done
 
 ---
 
-### 3. Microsoft Excel / Google Sheets
+### 3. Azure Boards
+
+**Azure Boards** is a project management and work tracking tool provided by Microsoft Azure DevOps. It helps teams plan, track, and manage their software development work.
+
+#### Uses
+
+- Creating and managing work items
+- Tracking user stories, tasks, and bugs
+- Managing product backlogs
+- Planning and tracking sprints
+- Assigning tasks to team members
+- Monitoring project progress using boards and dashboards
+
+#### Example Workflow
+
+```text
+New → Active → Resolved → Closed
+```
+---
+
+### 4. Microsoft Excel / Google Sheets
 
 **Microsoft Excel** and **Google Sheets** can be used for project planning, scheduling, tracking, and documentation.
 
@@ -197,6 +217,7 @@ To Do → In Progress → Testing → Done
 |------|--------------|
 | GitHub / Git | Version control and team collaboration |
 | Jira / Trello | Task and project management |
+| Azure Boards | Work tracking, backlog management, and sprint planning |
 | Excel / Google Sheets | Planning, scheduling, and progress tracking |
 
 ---
