@@ -120,3 +120,4 @@
 
 ## 🧭 Summary
 Trello is best for **visual task management**, adaptable to personal, academic, and professional workflows. Its strength lies in **simplicity + flexibility**, and with **Power-Ups + Butler automation**, it can scale into a powerful productivity hub.
+
