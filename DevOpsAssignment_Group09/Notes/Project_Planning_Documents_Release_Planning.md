@@ -356,6 +356,17 @@ Examples:
 - **Security issues:** Perform security testing and code reviews.
 - **Resource shortage:** Cross-train team members and maintain backup resources.
 
+### Example: Applying Risk Planning to an E-Commerce Project
+
+Consider an online shopping platform preparing for a major sale event:
+
+| Risk | Probability | Impact | Priority | Mitigation |
+|---|---|---|---|---|
+| Traffic spike causing server crash | High | High | Very High | Load testing before launch; auto-scaling infrastructure |
+| Payment gateway downtime | Medium | High | High | Integrate a backup payment provider |
+| Last-minute feature requests | Medium | Medium | Medium | Freeze scope one week before release |
+
+This shows how the Risk Exposure formula and mitigation strategies apply to a real planning scenario, not just in the abstract.
 ---
 
 ## 10. Resource Planning
