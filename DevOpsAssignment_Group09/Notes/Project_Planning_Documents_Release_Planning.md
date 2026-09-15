@@ -240,6 +240,17 @@ Example:
 ### Important Point
 Story points measure **relative effort**, not exact time.
 
+### Example: Estimating a Login Feature
+
+| User Story | Complexity | Effort | Uncertainty | Story Points |
+|---|---|---|---|---|
+| Basic login form UI | Low | Low | Low | 2 |
+| Email + password authentication | Medium | Medium | Low | 5 |
+| OAuth (Google/GitHub) login | High | High | Medium | 13 |
+| Forgot password + email reset flow | Medium | High | Medium | 8 |
+
+The OAuth login is estimated at 13 because it involves a third-party integration with unpredictable edge cases.
+
 ---
 
 ## 7. Definition of Ready (DoR)
