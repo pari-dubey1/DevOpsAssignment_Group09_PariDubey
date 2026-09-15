@@ -40,6 +40,168 @@ It explains **what will be tested, how it will be tested, who will test it, and 
 - Helps estimate time, cost, and resources.
 - Provides a reference for evaluating testing progress.
 
+## 1.1 Types of Testing
+
+### Functional Testing
+Functional testing verifies that the software system behaves according to the specified requirements.
+
+| Test Type | Description | Example |
+|---|---|---|
+| Unit Testing | Tests individual components or functions in isolation | Testing a login() function independently |
+| Integration Testing | Tests interaction between combined modules | Testing login module with database module |
+| System Testing | Tests the complete integrated system | End-to-end test of entire application |
+| Acceptance Testing | Validates the system meets business requirements | UAT performed by the client |
+| Regression Testing | Ensures new changes do not break existing functionality | Re-running all tests after a bug fix |
+| Smoke Testing | Basic tests to check if the build is stable | Checking if the app launches without crashing |
+| Sanity Testing | Narrow regression to verify specific bug fixes | Verifying the fixed login bug is resolved |
+
+### Non-Functional Testing
+
+| Test Type | Description | Example |
+|---|---|---|
+| Performance Testing | Evaluates speed, scalability, and stability | Load testing with 10,000 concurrent users |
+| Load Testing | Tests behavior under expected load | Simulating 500 users on a checkout page |
+| Stress Testing | Tests beyond normal capacity to find breaking point | Pushing server to 200% of expected load |
+| Security Testing | Identifies vulnerabilities and security flaws | SQL injection and XSS attack testing |
+| Usability Testing | Evaluates user-friendliness of the interface | Users asked to complete tasks without guidance |
+| Compatibility Testing | Tests across different browsers, OS, devices | Testing on Chrome, Firefox, Safari, Edge |
+| Reliability Testing | Measures consistency of performance over time | Running app continuously for 72 hours |
+
+### Testing Levels Diagram
+
+**Unit Testing → Integration Testing → System Testing → Acceptance Testing**
+
+- Unit Testing: Smallest testable parts tested individually
+- Integration Testing: Modules tested in combination
+- System Testing: Whole system tested as one unit
+- Acceptance Testing: Final validation by the end user or client
+
+---
+
+## 1.2 Test Case Design Techniques
+
+### Black Box Testing Techniques
+
+#### 1. Equivalence Partitioning
+Divides input data into valid and invalid partitions. Only one value from each partition is tested.
+
+Example — Age field accepting 18 to 60:
+
+| Partition | Range | Test Value | Expected Result |
+|---|---|---|---|
+| Invalid (below) | Less than 18 | 10 | Error |
+| Valid | 18 to 60 | 35 | Accepted |
+| Invalid (above) | Greater than 60 | 75 | Error |
+
+#### 2. Boundary Value Analysis
+Tests values at the boundaries of input ranges, since errors often occur at edges.
+
+Example — Age field accepting 18 to 60:
+
+| Boundary | Test Values |
+|---|---|
+| Lower boundary | 17, 18, 19 |
+| Upper boundary | 59, 60, 61 |
+
+#### 3. Decision Table Testing
+Used when multiple conditions determine the output.
+
+Example — Login system:
+
+| Condition | Rule 1 | Rule 2 | Rule 3 | Rule 4 |
+|---|---|---|---|---|
+| Valid Username | Yes | Yes | No | No |
+| Valid Password | Yes | No | Yes | No |
+| **Result** | Login Success | Login Fail | Login Fail | Login Fail |
+
+#### 4. State Transition Testing
+Used when the system changes state based on events.
+
+Example — ATM states:
+
+| Current State | Event | Next State |
+|---|---|---|
+| Idle | Card inserted | Card Validation |
+| Card Validation | PIN correct | Menu |
+| Card Validation | PIN incorrect | Retry |
+| Menu | Withdraw selected | Dispensing Cash |
+| Dispensing Cash | Cash dispensed | Idle |
+
+---
+
+## 1.3 Agile vs Waterfall
+
+| Parameter | Agile | Waterfall |
+|---|---|---|
+| Approach | Iterative and incremental | Linear and sequential |
+| Flexibility | High — changes welcome at any stage | Low — changes are costly after planning |
+| Customer Involvement | Continuous throughout the project | Mainly at the start and at delivery |
+| Delivery | Working software after every sprint | Single delivery at the end |
+| Testing | Performed throughout development | Performed after development is complete |
+| Risk Management | Lower — issues identified early | Higher — issues found late |
+| Documentation | Minimal but sufficient | Extensive and detailed |
+| Team Structure | Cross-functional, self-organizing | Specialized and hierarchical |
+| Best Suited For | Dynamic, evolving requirements | Fixed and well-defined requirements |
+| Examples | Scrum, Kanban, Extreme Programming | Traditional enterprise software projects |
+
+---
+
+## 1.4 Sprint Ceremonies
+
+| Ceremony | When Held | Duration (2-week sprint) | Attendees | Purpose |
+|---|---|---|---|---|
+| Sprint Planning | Start of sprint | Maximum 4 hours | Entire Scrum team | Select backlog items and set sprint goal |
+| Daily Scrum | Every day | 15 minutes | Development team | Sync progress and identify blockers |
+| Sprint Review | End of sprint | Maximum 2 hours | Team and stakeholders | Demonstrate completed work and gather feedback |
+| Sprint Retrospective | After sprint review | Maximum 1.5 hours | Scrum team | Reflect on process and plan improvements |
+| Backlog Refinement | Mid-sprint | 1 to 2 hours | Product Owner and dev team | Groom and estimate upcoming backlog items |
+
+---
+
+## 1.5 Definition of Ready and Definition of Done Checklists
+
+### Definition of Ready Checklist
+- [ ] User story is written in the standard format (As a user, I want, so that)
+- [ ] Acceptance criteria are clearly defined and agreed upon by the team
+- [ ] Story is estimated in story points by the development team
+- [ ] All dependencies are identified and resolved before the sprint
+- [ ] UI or UX designs are available if the story requires interface work
+- [ ] The story is small enough to be completed within a single sprint
+- [ ] The team has discussed the story and understands the expected outcome
+- [ ] No blockers or unresolved questions exist at the time of sprint planning
+- [ ] The story has been reviewed and approved by the Product Owner
+
+### Definition of Done Checklist
+- [ ] Code is written according to team coding standards and conventions
+- [ ] Code review has been completed by at least one other team member
+- [ ] Unit tests are written and all tests are passing
+- [ ] Integration tests have been completed where applicable
+- [ ] No critical or high-severity bugs remain open for this story
+- [ ] All acceptance criteria have been verified and signed off
+- [ ] Code has been merged into the designated branch successfully
+- [ ] Documentation has been updated wherever necessary
+- [ ] The feature has been deployed to the staging environment
+- [ ] The Product Owner has reviewed and approved the completed story
+
+---
+
+## 1.6 Scrum Roles and Responsibilities
+
+| Role | Responsibilities |
+|---|---|
+| Product Owner | Manages the product backlog, prioritizes features, represents stakeholders, defines acceptance criteria |
+| Scrum Master | Facilitates Scrum ceremonies, removes blockers, coaches the team, protects team from distractions |
+| Development Team | Designs, develops, and tests the product increment, self-organizes to complete sprint goals |
+
+### Scrum Artifacts
+
+| Artifact | Description |
+|---|---|
+| Product Backlog | Ordered list of all features, requirements, and improvements for the product |
+| Sprint Backlog | Subset of product backlog items selected for the current sprint along with the plan |
+| Product Increment | The sum of all completed product backlog items at the end of a sprint |
+| Burndown Chart | Visual representation of remaining work versus time in a sprint |
+| Velocity Chart | Shows how much work the team completes per sprint over time |
 ---
 
 ## 2. Release Plan
@@ -240,6 +402,17 @@ Example:
 ### Important Point
 Story points measure **relative effort**, not exact time.
 
+### Example: Estimating a Login Feature
+
+| User Story | Complexity | Effort | Uncertainty | Story Points |
+|---|---|---|---|---|
+| Basic login form UI | Low | Low | Low | 2 |
+| Email + password authentication | Medium | Medium | Low | 5 |
+| OAuth (Google/GitHub) login | High | High | Medium | 13 |
+| Forgot password + email reset flow | Medium | High | Medium | 8 |
+
+The OAuth login is estimated at 13 because it involves a third-party integration with unpredictable edge cases.
+
 ---
 
 ## 7. Definition of Ready (DoR)
@@ -356,6 +529,17 @@ Examples:
 - **Security issues:** Perform security testing and code reviews.
 - **Resource shortage:** Cross-train team members and maintain backup resources.
 
+### Example: Applying Risk Planning to an E-Commerce Project
+
+Consider an online shopping platform preparing for a major sale event:
+
+| Risk | Probability | Impact | Priority | Mitigation |
+|---|---|---|---|---|
+| Traffic spike causing server crash | High | High | Very High | Load testing before launch; auto-scaling infrastructure |
+| Payment gateway downtime | Medium | High | High | Integrate a backup payment provider |
+| Last-minute feature requests | Medium | Medium | Medium | Freeze scope one week before release |
+
+This shows how the Risk Exposure formula and mitigation strategies apply to a real planning scenario, not just in the abstract.
 ---
 
 ## 10. Resource Planning
@@ -403,6 +587,14 @@ Common approaches:
 For three-point estimation:
 
 **Expected Time = (Optimistic + 4 × Most Likely + Pessimistic) / 6**
+
+| Task | Optimistic | Most Likely | Pessimistic | Expected Time |
+|---|---|---|---|---|
+| Login module | 2 days | 4 days | 8 days | 4.33 days |
+| Payment integration | 3 days | 6 days | 12 days | 6.5 days |
+| Admin dashboard | 1 day | 3 days | 5 days | 3 days |
+
+This helps project managers build realistic schedules rather than relying on a single best-guess estimate.
 
 Example:
 
