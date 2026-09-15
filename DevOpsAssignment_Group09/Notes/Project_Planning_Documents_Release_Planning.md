@@ -426,6 +426,14 @@ For three-point estimation:
 
 **Expected Time = (Optimistic + 4 × Most Likely + Pessimistic) / 6**
 
+| Task | Optimistic | Most Likely | Pessimistic | Expected Time |
+|---|---|---|---|---|
+| Login module | 2 days | 4 days | 8 days | 4.33 days |
+| Payment integration | 3 days | 6 days | 12 days | 6.5 days |
+| Admin dashboard | 1 day | 3 days | 5 days | 3 days |
+
+This helps project managers build realistic schedules rather than relying on a single best-guess estimate.
+
 Example:
 
 Optimistic = 2 days  
